@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="File Uploader to AWS" icon-name="standard:document">
+        <lightning-input name="Upload File" type="file" onchange={handleSelectedFile}></lightning-input>      
+        <template if:true={showSpinner}>
+            <lightning-spinner alternative-text="Loading..." variant="brand"></lightning-spinner>
+        </template>            
+        <p>{fileName}</p>
+        <br/>
+        <lightning-button  label="Store File to AWS" onclick={handleFileUpload} variant="brand"></lightning-button> 
+    </lightning-card>
+</template>
